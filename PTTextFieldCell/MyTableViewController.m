@@ -69,7 +69,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return 2;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -80,11 +80,11 @@
     
     cell.separatorInset = UIEdgeInsetsZero;
     
-    cell.textField.userInteractionEnabled = NO;
+//    cell.textField.userInteractionEnabled = NO;
     
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
-    cell.textField.placeholder = @"Enter Text Here";
+    cell.textField.placeholder = (indexPath.row == 0) ? @"First" : @"Last";
     
     return cell;
 }
@@ -94,7 +94,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     
     PTTextFieldCell *cell = (PTTextFieldCell *)[tableView cellForRowAtIndexPath:indexPath];
-    cell.textField.userInteractionEnabled = YES;
+    
+//    cell.textField.userInteractionEnabled = YES;
     [cell.textField becomeFirstResponder];
 }
 
@@ -114,7 +115,7 @@
 }
 - (void)textFieldCellDidEndEditing:(PTTextFieldCell *)cell {
     
-    cell.textField.userInteractionEnabled = NO;
+//    cell.textField.userInteractionEnabled = NO;
 }
 - (BOOL)textFieldCell:(PTTextFieldCell *)cell shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
     return YES;
@@ -124,8 +125,30 @@
 }
 - (BOOL)textFieldCellShouldReturn:(PTTextFieldCell *)cell {
     
-    [cell.textField resignFirstResponder];
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     
+    if (!indexPath) {
+        [cell.textField resignFirstResponder];
+        return YES;
+    }
+    
+    NSInteger nextRow = indexPath.row + 1;
+    
+    if ([self tableView:self.tableView numberOfRowsInSection:indexPath.section] > nextRow) {
+        
+        UITableViewCell *nextCell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:nextRow inSection:indexPath.section]];
+        
+        if ([nextCell isKindOfClass:[PTTextFieldCell class]]) {
+            
+            PTTextFieldCell *textFieldCell = (PTTextFieldCell *)nextCell;
+            
+//            textFieldCell.textField.userInteractionEnabled = YES;
+            [textFieldCell.textField becomeFirstResponder];
+            return YES;
+        }
+    }
+    
+    [cell.textField resignFirstResponder];
     return YES;
 }
 
