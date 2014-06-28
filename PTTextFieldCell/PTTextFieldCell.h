@@ -33,7 +33,7 @@ extern NSString * const PTTextFieldCellReuseIdentifier;
 - (BOOL)textFieldCell:(PTTextFieldCell *)cell shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
 - (BOOL)textFieldCellShouldClear:(PTTextFieldCell *)cell;
 - (BOOL)textFieldCellShouldReturn:(PTTextFieldCell *)cell;
-- (BOOL)textFieldCellDidChange:(PTTextFieldCell *)cell;
+- (void)textFieldCellDidChange:(PTTextFieldCell *)cell;
 
 @end
 
