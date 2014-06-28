@@ -27,6 +27,7 @@ NSString * const PTTextFieldCellReuseIdentifier = @"PTTextFieldCellReuseIdentifi
         
         _textField = [[PTTextFieldWithMargins alloc] initWithFrame:self.contentView.bounds];
         _textField.delegate = self;
+        [_textField addTarget:self action:@selector(textFieldCellDidChange:) forControlEvents:UIControlEventEditingChanged];
         
         [self formatTextField:_textField];
         
@@ -51,6 +52,17 @@ NSString * const PTTextFieldCellReuseIdentifier = @"PTTextFieldCellReuseIdentifi
     
     textField.leftMargin = 15.0;
     textField.rightMargin = 15.0;
+}
+
+//===============================================
+#pragma mark -
+#pragma mark Editing Changed
+//===============================================
+- (IBAction)textFieldDidChange:(id)sender {
+    
+    if ([self.delegate respondsToSelector:@selector(textFieldCellDidChange:)]) {
+        [self.delegate textFieldCellDidChange:self];
+    }
 }
 
 //===============================================
