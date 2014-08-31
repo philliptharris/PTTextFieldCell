@@ -27,7 +27,7 @@ NSString * const PTTextFieldCellReuseIdentifier = @"PTTextFieldCellReuseIdentifi
         
         _textField = [[PTTextFieldWithMargins alloc] initWithFrame:self.contentView.bounds];
         _textField.delegate = self;
-        [_textField addTarget:self action:@selector(textFieldCellDidChange:) forControlEvents:UIControlEventEditingChanged];
+        [_textField addTarget:self action:@selector(textFieldDidChange:) forControlEvents:UIControlEventEditingChanged];
         
         [self formatTextField:_textField];
         
