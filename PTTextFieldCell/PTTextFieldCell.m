@@ -34,7 +34,7 @@ NSString * const PTTextFieldCellReuseIdentifier = @"PTTextFieldCellReuseIdentifi
         _textField.translatesAutoresizingMaskIntoConstraints = NO;
         [self.contentView addSubview:_textField];
         
-        NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(self.contentView, _textField);
+        NSDictionary *viewsDictionary = NSDictionaryOfVariableBindings(_textField);
         [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[_textField]|" options:0 metrics:0 views:viewsDictionary]];
         [self.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[_textField]|" options:0 metrics:0 views:viewsDictionary]];
     }

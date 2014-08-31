@@ -10,29 +10,29 @@
 	<string>PTTextFieldCell</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>EEA3045D-CA0F-42B9-BFDE-4A2E2FDF2C08</key>
+		<key>8B4A207517182ED72EEFDEA9A91A036F45E3B5E2</key>
 		<string>https://github.com/philliptharris/PTTextFieldCell.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>PTTextFieldCell.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>EEA3045D-CA0F-42B9-BFDE-4A2E2FDF2C08</key>
+		<key>8B4A207517182ED72EEFDEA9A91A036F45E3B5E2</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/philliptharris/PTTextFieldCell.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>EEA3045D-CA0F-42B9-BFDE-4A2E2FDF2C08</string>
+	<string>8B4A207517182ED72EEFDEA9A91A036F45E3B5E2</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>EEA3045D-CA0F-42B9-BFDE-4A2E2FDF2C08</string>
+			<string>8B4A207517182ED72EEFDEA9A91A036F45E3B5E2</string>
 			<key>IDESourceControlWCCName</key>
 			<string>PTTextFieldCell</string>
 		</dict>
